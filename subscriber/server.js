@@ -15,6 +15,14 @@ app.get('/', (req, res) => {
     res.send('Welcome to the home page.');
 });
 
+app.post('/:topic', (req, res) => {
+    res.type('application/json');
+    console.log(req.body);
+    res.json({
+        message: "Message Received"
+    });
+});
+
 
 
 
