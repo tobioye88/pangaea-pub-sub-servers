@@ -36,6 +36,6 @@ app.use(function(err, req, res, next){
 });
 
 app.listen(PORT, function(){
-    console.log( 'Publisher Server started on http://localhost:' + PORT + '; press Ctrl-C to terminate.' ); 
+    console.log( 'Subscriber Server started on http://localhost:' + PORT + '; press Ctrl-C to terminate.' ); 
 });
 
