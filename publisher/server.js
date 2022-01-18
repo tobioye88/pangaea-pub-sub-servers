@@ -1,7 +1,5 @@
-const express = require('express');
-const dotenv = require('dotenv');
-
-dotenv.config();
+import express from 'express';
+import 'dotenv/config';
 
 
 var app = express();
@@ -15,9 +13,6 @@ app.get('/', (req, res) => {
     res.type('text/plain');
     res.send('Welcome to the home page.');
 });
-
-
-
 
 
 //custom 404 response
