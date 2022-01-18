@@ -2,17 +2,23 @@ class FakeSubscriptionDatabase {
   subscribers = {};
 
   saveSubscription(title, url){
-    if(title in this.subscribers){
-      this.subscribers[title].push(url);
-    }else{
-      this.subscribers[title] = [url];
-    }
+    new Promise((resolve, reject) => {
+      if(title in this.subscribers){
+        this.subscribers[title].add(url);
+      }else{
+        this.subscribers[title] = new Set([url]);
+      }
+      resolve();
+    });
   }
 
   getSubscribers(topic){
-    return this.subscribers[topic] || [];
+    if(this.subscribers[topic]){
+      return Promise.resolve([...this.subscribers[topic]]);
+    }
+    return Promise.resolve([]);
   }
 }
 
-const FakeSubscriptionDatabase = new FakeSubscriptionDatabase;; 
-export {FakeSubscriptionDatabase};
+const fakeSubscriptionDatabase = new FakeSubscriptionDatabase;; 
+export {fakeSubscriptionDatabase};

@@ -1,0 +1,15 @@
+{
+  "name": "pangaea",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:publisher": "node ./publisher/server",
+    "dev:publisher": "cd /publisher && nodemon ./publisher/server",
+    "start:subscriber": "node ./subscriber/server",
+    "dev:subscriber": "cd /publisher && nodemon ./subscriber/server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
